@@ -1,6 +1,13 @@
 #!/bin/bash
 # Proper header for a Bash script.
 
+# Check for root user login
+if [ ! $( id -u ) -eq 0 ]; then
+	echo "You must be root to run this script."
+	echo "Please enter su before running this script again."
+	exit 2
+fi
+
 # Remove databases (and dependent programs)
 apt-get remove -y --purge mysql-common libmysqlclient16 
 apt-get remove -y --purge libcherokee-server0 cherokee libcherokee-config0
@@ -72,3 +79,5 @@ apt-get remove -y --purge bittorrent libtorrent13 rtorrent
 
 echo "Deleting /usr/share/fluxbox\n"
 rm -r /usr/share/fluxbox
+
+exit 0
