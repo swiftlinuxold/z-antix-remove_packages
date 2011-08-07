@@ -8,6 +8,9 @@ if [ ! $( id -u ) -eq 0 ]; then
 	exit 2
 fi
 
+echo "*****************************************************************"
+echo "BEGIN REMOVING PACKAGES"
+
 # Remove databases (and dependent programs)
 apt-get remove -y --purge mysql-common libmysqlclient16 
 apt-get remove -y --purge libcherokee-server0 cherokee libcherokee-config0
@@ -79,5 +82,8 @@ apt-get remove -y --purge bittorrent libtorrent13 rtorrent
 
 echo "Deleting /usr/share/fluxbox\n"
 rm -r /usr/share/fluxbox
+
+echo "FINISHED REMOVING PACKAGES"
+echo "*****************************************************************"
 
 exit 0
