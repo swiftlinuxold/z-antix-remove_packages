@@ -71,6 +71,7 @@ apt-get remove -y --purge apvlv
 apt-get remove -y --purge myspell-ca myspell-de-de myspell-el-gr myspell-es myspell-fr
 apt-get remove -y --purge libhunspell-1.2-0 libhunspell-1.2-0
 apt-get remove -y --purge myspell-nl myspell-pl myspell-pt-br myspell-ru
+apt-get remove -y --purge zathura
 
 # Remove world wide web
 apt-get remove -y --purge elinks-lite html2text links2 
